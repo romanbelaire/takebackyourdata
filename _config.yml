@@ -1,13 +1,10 @@
 title: "Take Back Your Data"
 tagline: "Essays on data as property, individual rights, and the economics of the personal information economy."
-description: "A publication arguing that your data is your property — and building the economic, legal, and political case for why that matters."
+description: "A publication arguing that your data is your property, and building the economic, legal, and political case for why that matters."
 author:
   name: "Roman Belaire"
 
-# Set these before deploying to GitHub Pages
-# url: "https://yourusername.github.io"
-# baseurl: "/takebackyourdata"
-url: ""
+url: "https://takebackyourdata.org"
 baseurl: ""
 
 permalink: /essays/:title/
