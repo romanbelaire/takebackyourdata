@@ -1,0 +1,39 @@
+---
+layout: home
+title: "Take Back Your Data"
+description: "Essays on data as property, individual rights, and the economics of the personal information economy."
+---
+
+<div class="page-container">
+  <section class="hero">
+    <p class="hero-eyebrow">A publication on data as property</p>
+    <h1 class="hero-title">Your data is derived from your life.<br>It belongs to you.</h1>
+    <p class="hero-subtitle">Every day, your behavior and identity are extracted and sold without your knowledge. These essays argue for a different legal and economic starting point, prioritizing you.</p>
+    <a href="{{ '/essays/' | relative_url }}" class="hero-cta">Read the essays &rarr;</a>
+  </section>
+
+  <section class="essays-section">
+    <p class="section-label">Essays</p>
+    <div class="essay-list">
+      {% for post in site.posts %}
+      <article class="essay-card" data-tags="{{ post.tags | join: ',' }}">
+        <div class="essay-meta">
+          <time class="essay-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <span class="essay-reading-time" data-words="{{ post.content | number_of_words }}"></span>
+          {% if post.tags %}
+          <div class="essay-tags">
+            {% for tag in post.tags limit:3 %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <h2 class="essay-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.subtitle %}
+        <p class="essay-card-subtitle">{{ post.subtitle }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>

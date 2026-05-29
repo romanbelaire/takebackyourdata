@@ -1,0 +1,53 @@
+---
+layout: default
+title: Essays
+description: "All essays from Take Back Your Data — on the economics, law, ethics, and politics of personal data."
+---
+
+<div class="page-container">
+  <header class="essays-page-header">
+    <h1>Essays</h1>
+    <p>A growing body of work on the economics, law, and politics of personal data.</p>
+  </header>
+
+  <div class="search-wrapper">
+    <input type="search" class="search-input" placeholder="Search essays&hellip;" aria-label="Search essays">
+  </div>
+
+  <div class="tag-filter" role="group" aria-label="Filter by topic">
+    <span class="tag-filter-label">Filter:</span>
+    <button class="tag" data-tag="economics">economics</button>
+    <button class="tag" data-tag="law">law</button>
+    <button class="tag" data-tag="technology">technology</button>
+    <button class="tag" data-tag="cooperative">cooperative</button>
+    <button class="tag" data-tag="AI">AI</button>
+    <button class="tag" data-tag="theory">theory</button>
+    <button class="tag" data-tag="ethics">ethics</button>
+    <button class="tag" data-tag="privacy">privacy</button>
+  </div>
+
+  <section class="essays-section" style="padding-top: 1.5rem;">
+    <div class="essay-list">
+      {% for post in site.posts %}
+      <article class="essay-card" data-tags="{{ post.tags | join: ',' }}">
+        <div class="essay-meta">
+          <time class="essay-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <span class="essay-reading-time" data-words="{{ post.content | number_of_words }}"></span>
+          {% if post.tags %}
+          <div class="essay-tags">
+            {% for tag in post.tags %}
+            <button class="tag" data-tag="{{ tag }}">{{ tag }}</button>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <h2 class="essay-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.subtitle %}
+        <p class="essay-card-subtitle">{{ post.subtitle }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <p class="no-results">No essays match that search.</p>
+  </section>
+</div>

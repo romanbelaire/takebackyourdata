@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article class="essay-layout">
+  <div class="essay-main">
+    <header class="essay-header">
+      <div class="essay-header-meta">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <span aria-hidden="true">&middot;</span>
+        <span class="reading-time-value" aria-label="Reading time"></span>
+        {% if page.tags %}
+        <span aria-hidden="true">&middot;</span>
+        <div class="essay-header-tags">
+          {% for tag in page.tags %}
+          <a href="{{ '/essays/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="essay-header-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+    </header>
+
+    <div class="essay-body">
+      {{ content }}
+    </div>
+
+    <div class="essay-footer">
+      <button class="share-btn" aria-label="Share this essay">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        Share
+      </button>
+    </div>
+
+    <nav class="essay-nav" aria-label="Adjacent essays">
+      {% if page.previous %}
+      <div class="essay-nav-item">
+        <span class="label">Earlier</span>
+        <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+      </div>
+      {% else %}
+      <div></div>
+      {% endif %}
+      {% if page.next %}
+      <div class="essay-nav-item essay-nav-next">
+        <span class="label">Later</span>
+        <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
+      </div>
+      {% endif %}
+    </nav>
+  </div>
+
+  <aside class="toc-sidebar" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list" id="toc-list"></ul>
+  </aside>
+</article>

@@ -1,0 +1,58 @@
+---
+layout: essay
+title: "A/B Testing Is Human Subjects Research"
+subtitle: "One of the most normalized parts of software development only exists due to regulatory arbitrage."
+date: 2026-05-14
+tags: [technology, ethics, law, AI]
+---
+
+A/B testing is a hundred years old and almost universally beneficial. A marketing firm prints half its mailers in red and half in green, counts the responses, and prints more red ones. A grocery chain tests two shelf arrangements and keeps the one that moves more product. The method is simple, and no one is harmed. However, in the world of software, which is now fully integrated with the human experience, a few structural distinctions exist that make newspaper headline testing fundamentally different from social media algorithm tuning. In fact, the intentional manipulation of user emotional states reads far closer to scientific testing than many intuit.
+
+The scale and structure of internet products added both considerable complexity and newfound ability to such tests. In 2012, Facebook [conducted a study](https://www.npr.org/sections/alltechconsidered/2014/06/30/326929138/facebook-manipulates-our-moods-for-science-and-commerce-a-roundup) on over half of its 1.2 billion users to determine if, by changing the emotional content of their feeds, the users' emotional state in turn also changed. Twelve years later, this same experiment runs continuously, for all users, on short-form content platforms optimized for "engagement" — because, thanks to excellent marketing, whatever a private firm does to their users has remained exempt from the moral framework we apply to all other forms of experimentation, from cancer research to graduate studies on psychology.
+
+Regarding the continuous nature of these online optimizations, the relationship between modern media and its users provides insight into a particularly distressing aspect of A/B testing in that world. While previous A/B testing was between choices within an environment (which ad/headline/flavor do you like better), the integration of digital media into our social, leisure, and economic lives means the tests change our environment itself. As much as Coca-Cola spent on its marketing and product design to make Coke as enticing as possible, it could never restructure your entire diet to see how your behavior changed. TikTok, Instagram, YouTube, Netflix, and all the other media platforms, meanwhile, maintain not just a master model of what button shapes make people click more often, but per-user profiles that detail our preferences and predict what makes us spend more time with the content. Every session a user spends on-platform is simultaneously its own product being sold to advertisers and a data point refining a behavioral model whose purpose is to predict what the user does next.
+
+## Common Rule
+
+We have long-standing precedent on how to recognize and address these experiments. [The Common Rule](https://www.hhs.gov/ohrp/regulations-and-policy/regulations/common-rule/index.html), the federal regulation that has governed human subjects research in the United States since 1991, defines human experimentation research as "a systematic investigation, including research development, testing, and evaluation, designed to develop or contribute to generalizable knowledge," conducted on "a living individual about whom an investigator obtains information through intervention or interaction." A typical platform A/B test satisfies every clause.
+
+It is a systematic investigation: subjects are randomized into groups, treatments are administered, outcomes are measured, and statistical inference is performed. It is designed to contribute to generalizable knowledge: the findings are not consumed and discarded but written up internally, distilled into institutional knowledge. It involves living individuals and is conducted through intervention — the test actively modifies the user experience. It also uses identifiable private information, since modern platform experiments are tied to user accounts and to behavioral profiles assembled over years.
+
+The Common Rule legislation provides a full framework for upholding human moral standards in trial research, principally centered on the notion of informed consent. Essentially, the legislation was written with the understanding that the most important aspect of a human clinical trial was that the human subject fully understood and was informed of the personal risks and benefits, of the description and experimental status of the procedures, and of the purpose of the study, and consented. Notably, the terms of service "consent" famously do *not* count towards informed consent for unreasonable statutes.
+
+Obviously, it is unreasonable to state that software companies should not perform A/B testing at all, simply because they made a product that their users intertwine their lives with. Instead, they just need to make a good-faith effort to inform users of what is being tested and why, and allow an opt-out for those nonconsenting.
+
+## Affect Interventions and Design Preference
+
+A loophole that should be shut down immediately is the option for companies to claim a low risk of harm with simple UI changes. Common Rule and other IRB regulations allow for approved exemptions for studies with minimal or no risk to participants. As such, companies could shroud manipulative changes behind innocuous design changes like color choice or font size, and waive the informed consent process. However, this should be explicitly taken into account because a century of design research and the entire discipline of graphic design *know* that visual choices move the affective experience. A designer claiming otherwise is either ignorant, and therefore unfit to run tests on millions, or intentionally misleading.
+
+However, this introduces a problem of scale. If every visual choice carries weight, then every change would require informed consent, which is operationally impossible. A line must be drawn somewhere, and using the risk of harm or the magnitude of design change is somewhat arbitrary. Instead, we should look at the A/B test's goals in relation to user preference, and whether it is trying to meet or to manipulate them. A platform making a button more visually appealing is meeting preference (users prefer attractive interfaces); a platform testing whether red borders trigger impulse purchases by anxiety induction is manipulating preference.
+
+The last required definition to draw this line, then, is what constitutes preference. There is a distinction in economics between what people *say* they want (stated preference) and what people *do* (revealed preference). The classical position, from Paul Samuelson in the late 1930s, is that revealed preference is the authoritative signal. If a person says they want to eat healthier and yet orders pizza three nights a week, the pizza is the preference. This distinction between elicited and observed signals catches a failure mode in self-reported data, where people misrepresent themselves not only to interviewers but also to themselves, and has contributed to many quality of life improvements over time.
+
+It has, however, been weaponized. The argument is familiar to anyone who has watched a congressional hearing in the last decade. The CEO of whatever in-vogue media platform testifies, saying that they simply optimize for user preference. Users come back, they click; these are revealed preferences. Who are we to second-guess the user? We are merely meeting them where they are.
+
+## Circular Optimization
+
+This argument has a flaw, which is attributed to the distinct structure of online media that has never existed in the past. Revealed preference, when conceived, assumed that the environment in which choices were made was roughly neutral. A user was offered a free choice between pre-existing options (say, restaurants), and has up-to-date information on how the options work. Now, users are being adversarially optimized against by a system that has spent a decade learning their specific exploitable patterns. Users largely do not know how the product they are using operates or towards what goal. Moreover, there is no choice. A/B tests work en masse and aggregate results across users rather than elicit active choices. Finally, there is the environment — the app itself — where every aspect is carefully chosen (through more testing) to change some part of the user's behavior.
+
+Consider a casino. A casino is engineered, in every detail of its lighting and carpet pattern and drink service, to extract money from the people inside it. By staying and losing money repeatedly, they reveal a preference for the activity. Obviously, no one treats casinos as ethical. The whole environment is the manipulation; the revealed behavior is what manipulation looks like when it succeeds. Revealed preference theory is a tool for inferring desires in conditions of free choice. When the conditions of free choice have been violated, engineered to produce particular behaviors, we cannot rely on revealed preference as a motivation for design.
+
+The casino analogy, already damning, actually understates the case. A casino is a single engineered environment applied uniformly to everyone who walks in, optimized for the average user. A platform's A/B testing apparatus, combined with a persistent per-user behavioral profile, produces something worse: a casino whose architecture is continuously revised around each individual. The house knows the odds, and it knows that *you* specifically are susceptible to loss-aversion framing after 11 pm, that your scroll slows when you encounter a particular kind of outrage, and that ASMR content reliably extends your session by eight minutes.
+
+Moreover, this casino also changes you through its user profile. The user profile, initially built on information about what keeps you on longer, begins to predict how you'll behave, and influences the content served. A user who initially resists doomscrolling is gradually reconditioned through content sequencing until the resistance erodes. The casino gets better at extracting from them, and they get worse at resisting it. This is the experiment that has never required — and would never gain — informed consent, and is the logical endpoint of the marriage of environment design and user profiling.
+
+No reasonable position holds that software companies should freeze their interfaces in place, or that every button-color test requires a consent form. Instead, we should just recognize that a meaningful category of platform experimentation already meets the federal definition of human subjects research and should be governed accordingly. Behavioral reconditioning, and any test that draws on longitudinal user profiles, should require informed consent or a workable opt-out for those who decline. This is not an unreasonable burden on a trillion-dollar industry.
+
+<div class="references">
+
+## References
+
+1. Facebook Emotional Contagion Study, NPR. <https://www.npr.org/sections/alltechconsidered/2014/06/30/326929138/facebook-manipulates-our-moods-for-science-and-commerce-a-roundup>
+2. The Common Rule, US Department of Health and Human Services. <https://www.hhs.gov/ohrp/regulations-and-policy/regulations/common-rule/index.html>
+3. 45 CFR 46.101(a), US DHHS. <https://www.ecfr.gov/current/title-45/part-46#p-46.101(a)>
+4. 45 CFR 46.116(b), US DHHS. <https://www.ecfr.gov/current/title-45/part-46#p-46.116(b)>
+5. Terms of Service, Berkeley Technology Law Journal. <https://btlj.org/2014/11/terms-of-service-didnt-read-might-not-be-a-problem-if-its-browsewrap/>
+6. "A Note on the Pure Theory of Consumer's Behaviour," Paul Samuelson. *Economica*, 1938.
+
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">Take Back<span> Your Data</span></a>
+      <ul class="nav-links">
+        <li><a href="{{ '/essays/' | relative_url }}"{% if page.url contains '/essays' or page.layout == 'essay' %} class="active"{% endif %}>Essays</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="active"{% endif %}>About</a></li>
+        <li><a href="https://takebackyourdata.substack.com" target="_blank" rel="noopener" class="nav-substack">Substack ↗</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
